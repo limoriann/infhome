@@ -5,7 +5,7 @@ if a > 100:
 	print('Введите другое число')
 else:
 	for i in range(1, a+1):
-		s+=i**2
+		s+=i**3
 	print(s)
 #Задание 2
 x = [ ]
