@@ -62,14 +62,18 @@ x = np.linspace(-5, -0.01, 1000)
 plt.axvline(0, linewidth=0.5, c='red', linestyle='--')
 
 #Задание 4
-x = np.linspace(-5, 5, 1000)
+x_left = np.linspace(-5, -0.01, 1000)
+x_right = np.linspace(0.01, 5, 1000)
 plt.rcParams['figure.figsize'] = [3, 3]
 plt.rcParams['figure.autolayout'] = True
-x = np.linspace(-1, 2, 1000)
-plt.plot(x,f(x, 1, 1), color = 'red', label = '1 случай')
-plt.plot(x,f(x, 1, 2), color = 'green', label = '2 случай')
-plt.plot(x,f(x, 2, 1), color = 'lue', label = '3 случай')
-plt.plot(x, [0] * len(x), color = 'yellow, label = 'f(x) = 0')
+plt.plot(x_left, f(x_left), label = '1 график', color = 'red')
+plt.plot(x_right, f(x_right), color = 'red')
+
+plt.plot(x_left, f(x_left, 1, 2), label = '2 график', color = 'green')
+plt.plot(x_right, f(x_right, 1, 2), color = 'green')
+
+plt.plot(x_left, f(x_left, 2, 1), label = '3 график', color = 'blue')
+plt.plot(x_right, f(x_right, 2, 1), color = 'blue')
 plt.grid()
 plt.title('График')
 plt.xlabel('Ось абсцисс')
